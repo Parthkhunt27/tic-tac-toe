@@ -1,0 +1,162 @@
+
+/* Colors from the palette */
+:root {
+    
+    --color-light-blue: #8ECAE6;
+    --color-gold: #fadb8c;
+    --color-light-pink: #f896ab ;
+    --color-purple:rgba(105, 19, 105, 0.74);
+}
+
+body {
+    display: block;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background:linear-gradient(180deg,var(--color-light-pink),var(--color-light-blue)) ;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: var(--color-purple);
+   
+}
+
+.game-heading {
+    font-size: 2em;
+    margin-top: 1rem;
+    background: linear-gradient(180deg,var(--color-light-pink),var(--color-light-blue));
+    background-clip: text;
+    color: var(--color-purple);
+}
+
+.game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+
+}
+
+.game-board {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    gap: 12px;
+}
+
+.cell {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3em;
+    background-color: var(--color-purple);
+    box-shadow: 0 1px 10px;
+    border-radius: 70% 30% 40% 70% / 60% 40% 60% 40% ;
+    cursor: pointer;
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+.cell:hover {
+    transform: scale(1.1);
+    border-radius: 70% 45% 70% 50% / 45% 20% 80% 60% ;
+}
+
+.cell.X {
+    color: var(--color-light-blue);
+}
+
+.cell.O {
+    color: var(--color-light-pink);
+}
+
+.game-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.status {
+    font-size: 1.5em;
+    text-align: center;
+}
+
+#restart-button {
+    display: block;
+    padding: 10px 20px;
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--color-light-blue) ;
+    background-color: var(--color-purple);
+    border: none;
+    border-radius: 20px 30px 15px 28px ;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-left: 10px;
+}
+
+
+
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.popup-content {
+    
+    background:linear-gradient(180deg,var(--color-light-pink),var(--color-light-blue)) ;
+    padding: 20px;
+    border-radius:20px;
+    text-align: center;
+    animation: scaleUp 0.3s ease-in-out;
+    margin: 1px;
+}
+
+.popup-message {
+    color: var(--color-purple);
+    font-size: 1.5em;
+    
+}
+
+#close-popup, #restart-popup {
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 1em;
+    color: var(--color-light-blue) ;
+    background-color: var(--color-purple);
+    border: none;
+    border-radius:20px 30px 15px 28px ;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#close-popup:hover, #restart-button:hover ,#restart-popup{
+    transform: scale(1.1);
+    border-radius:  28px 15px 30px 20px ;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes scaleUp {
+    from {
+        transform: scale(0.8);
+    }
+    to {
+        transform: scale(1);
+    }
+}

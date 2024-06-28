@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tic-Tac-Toe</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="/assets/three-in-a-row.png">
+</head>
+
+<body>
+  <div class="game-container">
+    <h1 class="game-heading">Tic-Tac-Toe</h1>
+    <div class="game-board">
+      <div class="cell" data-index="0"></div>
+      <div class="cell" data-index="1"></div>
+      <div class="cell" data-index="2"></div>
+      <div class="cell" data-index="3"></div>
+      <div class="cell" data-index="4"></div>
+      <div class="cell" data-index="5"></div>
+      <div class="cell" data-index="6"></div>
+      <div class="cell" data-index="7"></div>
+      <div class="cell" data-index="8"></div>
+    </div>
+  </div>
+  <div class="game-info">
+    <h2 class="status"></h2>
+    <button id="restart-button">Restart Game</button>
+  </div>
+  <div class="popup" id="popup">
+    <div class="popup-content">
+      <h2 class="popup-message" id="popup-message"></h2>
+
+      <button id="restart-popup">Restart Game</button>
+      <button id="close-popup">Close</button>
+    </div>
+  </div>
+  <script src="logic.js"></script>
+</body>
+
+</html>
